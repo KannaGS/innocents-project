@@ -1,0 +1,46 @@
+pragma solidity ^0.4.19;
+contract pro
+{
+
+  string word="welcome";
+  string na="abc";
+  uint no=123;
+  
+   address owner;
+    function pro()
+    {
+    
+    owner=msg.sender;
+        
+    }
+   modifier ifOwner()
+       {
+           if(owner != msg.sender)
+           throw;
+        _;
+        }
+  
+
+ 
+function namedetails() constant returns(string)
+{
+        
+        return na;
+    
+}
+function crimedetails() constant returns(string)
+{
+  return word;
+}
+
+
+   function Enter_Data(uint s_no,string name,string crime)  returns(uint,string,string)
+   {    
+        no=s_no;
+        na=name;
+        word=crime;
+        return (s_no,name,crime);
+       
+    }
+        
+}
